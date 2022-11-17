@@ -20,7 +20,7 @@ export default function HomeScreen({navigation}) {
     }, []); */
     
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'pink' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFBDF1' }}>
         {/* {!fontLoaded ? (
             <Text> Loading...</Text>
         ) : ( */}
@@ -32,15 +32,17 @@ export default function HomeScreen({navigation}) {
         <Image source={require('../assets/frontpage.png')} />
 
         <View style={{height: 100, flexDirection: 'row'}}>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: 'lightblue', margin: 5, justifyContent: 'center'}}>
+            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 5, justifyContent: 'center'}}>
                 <Button 
-                title="Register glove"
+                title="REGISTER GLOVE"
+                color={'black'}
                 onPress={() => navigation.navigate('Register')}
                 />
             </View>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: 'lightblue', margin: 5, justifyContent: 'center'}}>
+            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 5, justifyContent: 'center'}}>
                 <Button
-                title="Find glove"
+                title="FIND GLOVE"
+                color='black'
                 onPress={() => navigation.navigate('Find')}
                 />
             </View>
