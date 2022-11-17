@@ -16,11 +16,11 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={StartScreen} options={{ title: '' }} />
-        <Stack.Screen name="Register" component={RegisterPage1} />
-        <Stack.Screen name="Find" component={FindListPage} />
+        <Stack.Screen name="Home" component={StartScreen} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1', borderWidth: 0}}} />
+        <Stack.Screen name="Register" component={RegisterPage1} options={{ title: '', fontFamily: 'InriaSans', headerStyle: {backgroundColor: '#FFBDF1'}}} />
+        <Stack.Screen name="Find" component={FindListPage} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
         <Stack.Screen name="Camera" component={RegisterCamera} />
-        <Stack.Screen name="Register2" component={RegisterPage2} />
+        <Stack.Screen name="Register2" component={RegisterPage2} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

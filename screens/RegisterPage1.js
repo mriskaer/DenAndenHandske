@@ -9,18 +9,19 @@ export default function RegisterScreen({navigation}) {
     const [rightIsChecked, rightSetChecked] = useState(false);
     const [leftIsChecked, leftSetChecked] = useState(false);
 
+    
+
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
         <View style={{flex: 1, marginTop: 10}}>
-            <Text style={{fontSize: 20, margin: 5}}>
+            <Text style={{fontSize: 25, margin: 5, fontFamily: 'InriaSans'}}>
                 DEN ANDEN HANDSKE
             </Text>
         </View>
         
-        
         <View style={{flex:3}}>
             
-            <Text style={{flex: 1, fontSize: 15}}>
+            <Text style={{flex: 1, fontSize: 15,}}>
                 Take a picture of the glove
             </Text>
             
