@@ -6,7 +6,7 @@ import { Camera } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 
 export default function RegisterCamera() {
-    const albumName = 'PMAP_test_album';
+    const albumName = 'Glove_cache';
     const [hasCameraPermission, setHasCameraPermission] = useState(false); // Permission to use camera on phone
     const [hasCameraRollPermission, setHasCameraRollPermission] = useState(false); // Permission to use cameraRoll on phone
 
@@ -38,24 +38,24 @@ export default function RegisterCamera() {
             console.log('Creating asset');
 
             const asset = await MediaLibrary.createAssetAsync(uri);
-            console.log('Saving the picture to our album: ' + albumName);
+            console.log('Saving the picture to album: ' + albumName);
 
             // This is where we save the picture to our medialibrary !
             // create album (if not there already) and store picture 
             let albumRef = await MediaLibrary.getAlbumAsync(albumName); // Go get our album if it is there. If not then create the album
             if (!albumRef) {
-                console.log('Album not there yet - go ahead and create one');
+                console.log('Album not found. Initializing...');
                 await MediaLibrary.createAlbumAsync(albumName, asset);
             }
             else {
-                console.log('Album found - go ahead and use it');
+                console.log('Album found. Saving Asset');
                 await MediaLibrary.addAssetsToAlbumAsync(asset, albumRef);
             }
 
             //await MediaLibrary.saveToLibraryAsync(uri);  Alternative one stop way to save picture to main roll without possibility to specify album
 
 
-            console.log('Asset created and picture saved to album');
+            console.log('Asset Saved');
         }
         catch (error) {
             console.log('Error', error);
