@@ -1,18 +1,17 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Button } from 'react-native';
 import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 
 
 
 export default function RegisterScreen({navigation}) {
-    //
+
     const [rightIsChecked, rightSetChecked] = useState(false);
     const [leftIsChecked, leftSetChecked] = useState(false);
 
-    //
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, marginTop: 10}}>
             <Text style={{fontSize: 20, margin: 5}}>
                 DEN ANDEN HANDSKE
             </Text>
@@ -27,7 +26,7 @@ export default function RegisterScreen({navigation}) {
             
             <View style={{flex: 6, alignItems: 'center'}}>
                 <Image 
-                    style={{height: 100, width: 100, borderRadius: 20, margin: 10}}
+                    style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
                     source={require('../assets/cameraicon.png')} 
                 />
             </View>
@@ -65,11 +64,15 @@ export default function RegisterScreen({navigation}) {
             
         </View>
         <View style={{flex:2}}>
-            <Text>
-                Videre
-            </Text>
-
+            <View style={{borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1, padding: 10}}>
+                <Button
+                    title="NEXT"
+                    color='black'
+                    onPress={() => navigation.navigate('Register2')}
+                />
+            </View>
         </View>
+        
       </View>
     );
 }
