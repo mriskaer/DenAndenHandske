@@ -99,7 +99,7 @@ export default function RegisterCamera() {
                         onPress={() => {
                             snapAndSaveThePicture();
                         }}>
-                        <Text style={{ fontSize: 18, marginBottom: 18, color: 'white', textAlign: 'center' }}>Capture</Text>
+                        <Text style={{ fontSize: 18, marginBottom: 100, color: 'white', textAlign: 'center' }}>Capture</Text>
                     </TouchableOpacity>
 
                 </View>
