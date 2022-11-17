@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from 'expo-font';
 import { useState, useEffect } from 'react';
+import * as Font from 'expo-font';
 
 export default function HomeScreen({navigation}) {
 
@@ -11,35 +12,40 @@ export default function HomeScreen({navigation}) {
         'InriaSans': require("./../assets/fonts/InriaSans-Light.ttf"),
     })
 
-    const [fontLoaded, setFontLoaded] = useState(false);
+
+    //const [fontLoaded, setFontLoaded] = useState(false);
+
+    async function loadAsync2() {
+        await Font.loadAsync({
+            InriaSans: require('../assets/fonts/InriaSans-Light.ttf'),
+         });
+    }
+    
     useEffect(async() => {
-     await Font.loadAsync({
-         InriaSans: require('../assets/fonts/InriaSans-Light.ttf'),
-      });
-      setFontLoaded(true);
+        loadAsync2()
     }, []); */
     
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFBDF1' }}>
-        {/* {!fontLoaded ? (
+        {/* {!fontsLoaded ? (
             <Text> Loading...</Text>
         ) : ( */}
-            <Text style={{ fontSize: 45, textAlign: 'center' , /* fontFamily: 'InriaSans' */}}> 
+            <Text style={{ fontSize: 45, textAlign: 'center' , /* fontFamily: 'InriaSans'  */}}> 
             DEN ANDEN HANDSKE 
             </Text> 
-        {/* )} */}
+        {/* )} */} 
         
         <Image source={require('../assets/frontpage.png')} />
 
         <View style={{height: 100, flexDirection: 'row'}}>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 5, justifyContent: 'center'}}>
+            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
                 <Button 
                 title="REGISTER GLOVE"
                 color={'black'}
                 onPress={() => navigation.navigate('Register')}
                 />
             </View>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 5, justifyContent: 'center'}}>
+            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
                 <Button
                 title="FIND GLOVE"
                 color='black'
