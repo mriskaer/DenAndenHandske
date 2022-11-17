@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StartScreen from './screens/StartScreen';
 import RegisterPage1 from './screens/RegisterPage1';
 import FindListPage from './screens/FindListPage';
+import RegisterCamera from './screens/RegisterCamera';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,9 +15,10 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={StartScreen} options={{ title: '' }}/>
-        <Stack.Screen name="Register" component={RegisterPage1}/>
-        <Stack.Screen name="Find" component={FindListPage}/>
+        <Stack.Screen name="Home" component={StartScreen} options={{ title: '' }} />
+        <Stack.Screen name="Register" component={RegisterPage1} />
+        <Stack.Screen name="Find" component={FindListPage} />
+        <Stack.Screen name="Camera" component={RegisterCamera} />
       </Stack.Navigator>
     </NavigationContainer>
   );
