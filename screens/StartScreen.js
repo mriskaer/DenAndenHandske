@@ -31,7 +31,7 @@ export default function HomeScreen({navigation}) {
     }
 
     return (
-        <View style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFBDF1' }}>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFBDF1' }}>
             
             {!fontsLoaded ? (
                 <Text> Loading...</Text>
@@ -40,8 +40,11 @@ export default function HomeScreen({navigation}) {
                  DEN ANDEN HANDSKE 
                 </Text> 
             )} 
-                
-            <Image source={require('../assets/frontpage.png')} />
+
+            <View style={{flex: 2}}>
+                <Image source={require('../assets/frontpage.png')} />
+            </View>    
+            
                     
 
             <View style={{height: 100, flexDirection: 'row'}}>

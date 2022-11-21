@@ -21,7 +21,7 @@ export default function RegisterScreen({navigation}) {
         
         <View style={{flex:3}}>
             
-            <Text style={{flex: 1, fontSize: 15,}}>
+            <Text style={{flex: 2, fontSize: 15,}}>
                 Take a picture of the glove
             </Text>
             
@@ -33,11 +33,11 @@ export default function RegisterScreen({navigation}) {
             </View>
             
         </View>
-        <View style={{flex:3}}>
+        <View style={{flex:2}}>
             <Text style={{fontSize: 15}}>
                 Which glove(s) have you found?
             </Text>
-            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>
+            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                 <View style={{margin: 20}}>
                     <Text>
                         Left
@@ -73,6 +73,23 @@ export default function RegisterScreen({navigation}) {
                 />
             </View>
         </View>
+        <View style={{height: 100, flexDirection: 'row'}}>
+                <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
+                    <Button 
+                    title="HOME SCREEN"
+                    color={'black'}
+                    onPress={() => navigation.navigate('Home')}
+                    />
+                </View>
+                <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
+                    <Button
+                    fontFamily="InriaSans"
+                    title="FIND GLOVE"
+                    color='black'
+                    onPress={() => navigation.navigate('Find')}
+                    />
+                </View>
+            </View>
         
       </View>
     );
