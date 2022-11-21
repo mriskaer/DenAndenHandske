@@ -8,7 +8,7 @@ export default function AddButton(props) {
                 <Button
                     title={props.title}
                     color='black'
-                    onPress={() => props.navigation.navigate('Register2')}
+                    onPress={() => props.navigation.navigate('Home')}
                 />
             </View>
         </View>

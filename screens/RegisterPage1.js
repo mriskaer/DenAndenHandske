@@ -1,12 +1,10 @@
 import { View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
+import AddCheckBox from "../components/AddCheckBox"
 
 
 export default function RegisterScreen({navigation}) {
-
-    const [rightIsChecked, rightSetChecked] = useState(false);
-    const [leftIsChecked, leftSetChecked] = useState(false);
 
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
@@ -37,28 +35,8 @@ export default function RegisterScreen({navigation}) {
                 Which glove(s) have you found?
             </Text>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                <View style={{margin: 20}}>
-                    <Text>
-                        Left
-                    </Text>
-                    <Checkbox
-                        style={{alignSelf: 'center'}}
-                        value={rightIsChecked}
-                        onValueChange={rightSetChecked}
-                        color={rightIsChecked ? '#4630EB' : undefined}
-                    />
-                </View>
-                <View style={{margin: 20}}>
-                    <Text>
-                        Right
-                    </Text>
-                    <Checkbox
-                        style={{alignSelf: 'center'}}
-                        value={leftIsChecked}
-                        onValueChange={leftSetChecked}
-                        color={leftIsChecked ? '#4630EB' : undefined}
-                    />
-                </View>
+                <AddCheckBox hand="left"></AddCheckBox>
+                <AddCheckBox hand="right"></AddCheckBox>
             </View>
             
             
