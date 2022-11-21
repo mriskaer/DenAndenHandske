@@ -8,6 +8,7 @@ import RegisterPage1 from './screens/RegisterPage1';
 import FindListPage from './screens/FindListPage';
 import RegisterCamera from './screens/RegisterCamera';
 import RegisterPage2 from './screens/RegisterPage2';
+import FindMapPage from './screens/FindMapPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="Find" component={FindListPage} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
         <Stack.Screen name="Camera" component={RegisterCamera} />
         <Stack.Screen name="Register2" component={RegisterPage2} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
+        <Stack.Screen name="FindMap" component={FindMapPage} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

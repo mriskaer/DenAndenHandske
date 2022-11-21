@@ -1,15 +1,12 @@
-import { View, Text, Image, Button } from 'react-native';
+import { View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
-
 
 
 export default function RegisterScreen({navigation}) {
 
     const [rightIsChecked, rightSetChecked] = useState(false);
     const [leftIsChecked, leftSetChecked] = useState(false);
-
-    
 
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
@@ -26,14 +23,12 @@ export default function RegisterScreen({navigation}) {
             </Text>
             
             <View style={{flex: 6, alignItems: 'center'}}>
-                <Image 
-                    style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                    source={require('../assets/cameraicon.png')} 
-                />
-                <Button
-                        title='open camera'
-                        onPress={() => navigation.navigate('Camera')}
+                <TouchableOpacity onPress={()=>navigation.navigate('Camera')}>
+                    <Image 
+                        style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
+                        source={require('../assets/cameraicon.png')} 
                     />
+                </TouchableOpacity>
             </View>
             
         </View>
@@ -78,22 +73,22 @@ export default function RegisterScreen({navigation}) {
             </View>
         </View>
         <View style={{height: 100, flexDirection: 'row'}}>
-                <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                    <Button 
+            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
+                <Button 
                     title="HOME SCREEN"
                     color={'black'}
                     onPress={() => navigation.navigate('Home')}
-                    />
-                </View>
-                <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                    <Button
+                />
+            </View>
+            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
+                <Button
                     fontFamily="InriaSans"
                     title="FIND GLOVE"
                     color='black'
                     onPress={() => navigation.navigate('Find')}
-                    />
-                </View>
+                />
             </View>
+        </View>
         
       </View>
     );
