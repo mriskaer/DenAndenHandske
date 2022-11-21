@@ -30,6 +30,10 @@ export default function RegisterScreen({navigation}) {
                     style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
                     source={require('../assets/cameraicon.png')} 
                 />
+                <Button
+                        title='open camera'
+                        onPress={() => navigation.navigate('Camera')}
+                    />
             </View>
             
         </View>
