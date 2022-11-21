@@ -1,7 +1,9 @@
-import { View, Text, Image, Button } from 'react-native'
+import { View, Text, Image, Button, FlatList } from 'react-native'
 import React from 'react'
+import GlovePost from "../components/GlovePost"
 
 export default function FindScreen({navigation}) {
+
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
         <View style={{flex: 1, marginTop: 10}}>
@@ -23,67 +25,26 @@ export default function FindScreen({navigation}) {
                     color='black'
                     onPress={() => navigation.navigate('FindMap')}
                 />
-            </View>
-            
+            </View> 
         </View>
-        <View style={{flex: 6, flexDirection: 'row'}}>
-              <View>
-                <Image 
-                  style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                  source={require('../assets/glove1.jpg')} 
-                />
-                <View style={{margin: 5, borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1}}>
-                  <Button
-                    title="SEE GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Home')}
-                  />
-                </View>
-              </View>
-              
-              <View>
-                <Image 
-                  style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                  source={require('../assets/glove2.jpg')} 
-                />
-                <View style={{margin: 5, borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1}}>
-                  <Button
-                    title="SEE GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Home')}
-                  />
-                </View>
-              </View>
-            </View>
-            <View style={{flex: 6, flexDirection: 'row'}}>
-              <View>
-                <Image 
-                  style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                  source={require('../assets/glove3.jpg')} 
-                />
-                <View style={{margin: 5, borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1}}>
-                  <Button
-                    title="SEE GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Home')}
-                  />
-                </View>
-              </View>
-              
-              <View>
-                <Image 
-                  style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                  source={require('../assets/glove4.jpg')} 
-                />
-                <View style={{margin: 5, borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1}}>
-                  <Button
-                    title="SEE GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Home')}
-                  />
-                </View>
-              </View>
-            </View>
+        <View style={{flex: 6, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
+              <GlovePost 
+                glove_image={require('../assets/glove1.jpg')}
+                navigation={navigation}
+              ></GlovePost>
+              <GlovePost 
+                glove_image={require('../assets/glove2.jpg')}
+                navigation={navigation}
+              ></GlovePost>
+              <GlovePost 
+                glove_image={require('../assets/glove3.jpg')}
+                navigation={navigation}
+              ></GlovePost>
+              <GlovePost 
+                glove_image={require('../assets/glove4.jpg')}
+                navigation={navigation}
+              ></GlovePost>
+        </View>
         
         <View style={{height: 100, flexDirection: 'row'}}>
             <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>

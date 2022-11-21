@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image, Button } from 'react-native'
 
 export default function GlovePost(props) {
     return (
         <View>
             <Image 
                 style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                source={require(props.glove_image)} 
+                source={(props.glove_image)} 
             />
             <View style={{margin: 5, borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1}}>
                 <Button
