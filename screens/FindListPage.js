@@ -1,8 +1,23 @@
 import { View, Text, Image, Button, FlatList } from 'react-native'
 import React from 'react'
 import GlovePost from "../components/GlovePost"
+import { useContext } from "react";
+import { PostContext } from "../appContext"
 
 export default function FindScreen({navigation}) {
+  const [getGlovePosts, setGlovePosts] = useContext(PostContext);
+
+  function make_post(post_data) {
+    return (
+        <GlovePost 
+            glove_id={post_data.glove_id}
+            //location={post_data.location}
+            glove_image={post_data.glove_image}
+            //description={post_data.description}
+            navigation={navigation}
+        ></GlovePost>
+    )
+}
 
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
@@ -12,13 +27,13 @@ export default function FindScreen({navigation}) {
             </Text>
         </View>
         
-        <View style={{flex:3, alignItems: 'center'}}>
+        <View style={{flex:2, alignItems: 'center'}}>
             
             <Text style={{flex: 1, fontSize: 15,}}>
                 Single gloves in your area
             </Text>
             
-            <View style={{flex: 3, borderRadius: 15, backgroundColor: '#DA90FC', margin: 15, justifyContent: 'center', borderColor: 'black', borderWidth: 1, width: 100, alignSelf: 'center'}}>
+            <View style={{flex: 1, borderRadius: 15, backgroundColor: '#DA90FC', margin: 15, justifyContent: 'center', borderColor: 'black', borderWidth: 1, width: 100, alignSelf: 'center'}}>
                 <Button
                     fontFamily="InriaSans"
                     title="MAP"
@@ -27,8 +42,18 @@ export default function FindScreen({navigation}) {
                 />
             </View> 
         </View>
-        <View style={{flex: 6, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
-              <GlovePost 
+          
+        <View style={{flex: 7, justifyContent: 'center'}}>
+        <FlatList
+                  contentContainerStyle={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}
+
+                  data={getGlovePosts}
+
+                  renderItem={({item}) => make_post(item)}
+
+                  keyExtractor={item => item.glove_id}
+              />
+              {/* <GlovePost 
                 glove_image={require('../assets/glove1.jpg')}
                 navigation={navigation}
               ></GlovePost>
@@ -43,7 +68,7 @@ export default function FindScreen({navigation}) {
               <GlovePost 
                 glove_image={require('../assets/glove4.jpg')}
                 navigation={navigation}
-              ></GlovePost>
+              ></GlovePost> */}
         </View>
         
         <View style={{height: 100, flexDirection: 'row'}}>

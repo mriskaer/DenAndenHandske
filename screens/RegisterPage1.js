@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 import AddCheckBox from "../components/AddCheckBox"
 
-
 export default function RegisterScreen({navigation}) {
 
     return (

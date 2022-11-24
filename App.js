@@ -19,7 +19,7 @@ function App() {
   var glovePosts=[
     {
       glove_id: "1",
-      glove_image: require('./assets/glove1.jpg'),  
+      glove_image: require('./assets/glove1.jpg'), 
     }, 
     {
       glove_id: "2",
@@ -34,19 +34,23 @@ function App() {
       glove_image: require('./assets/glove4.jpg'),
     },
     {
-      glove_id: "1",
+      glove_id: "5",
       glove_image: require('./assets/glove1.jpg'),  
     }, 
     {
-      glove_id: "2",
+      glove_id: "6",
       glove_image: require('./assets/glove2.jpg'),
     },
     {
-      glove_id: "3",
+      glove_id: "7",
       glove_image: require('./assets/glove3.jpg'),
     },
     {
-      glove_id: "4",
+      glove_id: "8",
+      glove_image: require('./assets/glove4.jpg'),
+    },
+    {
+      glove_id: "9",
       glove_image: require('./assets/glove4.jpg'),
     },
   ]
