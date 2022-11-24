@@ -88,7 +88,6 @@ export default function FindScreen({navigation}) {
                 />
             </View>
         </View>
-        
       </View>
     );
   }

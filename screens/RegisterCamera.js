@@ -4,8 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { Camera } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
+import { useNavigation } from '@react-navigation/native';
 
-export default function RegisterCamera() {
+export default function RegisterCamera({ navigation }) {
     const albumName = 'Glove_cache';
     const [hasCameraPermission, setHasCameraPermission] = useState(false); // Permission to use camera on phone
     const [hasCameraRollPermission, setHasCameraRollPermission] = useState(false); // Permission to use cameraRoll on phone
@@ -56,6 +57,7 @@ export default function RegisterCamera() {
 
 
             console.log('Asset Saved');
+
         }
         catch (error) {
             console.log('Error', error);
@@ -79,7 +81,7 @@ export default function RegisterCamera() {
                         flexDirection: 'row'
 
                     }}>
-                    {/*  <TouchableOpacity  // Flipping camera between back and front
+                    {/* { <TouchableOpacity  // Flipping camera between back and front
                         style={{
                             flex: 1,
                             alignSelf: 'flex-end'
@@ -89,16 +91,17 @@ export default function RegisterCamera() {
                             flipTheCamera();
                         }}>
                         <Text style={{ fontSize: 18, marginBottom: 18, color: 'white' }}> Flip </Text>
-                    </TouchableOpacity> */}
-
+                    </TouchableOpacity>}
+                     */}
                     <TouchableOpacity // Taking a picture/snap
                         style={{
                             flex: 1,
                             alignSelf: 'flex-end'
                         }}
                         onPress={() => {
-                            snapAndSaveThePicture();
+                            snapAndSaveThePicture(); navigation.navigate('Register');
                         }}>
+
                         <Text style={{ fontSize: 18, marginBottom: 100, color: 'white', textAlign: 'center' }}>Capture</Text>
                     </TouchableOpacity>
 
