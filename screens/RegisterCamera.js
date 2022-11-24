@@ -79,7 +79,7 @@ export default function RegisterCamera() {
                         flexDirection: 'row'
 
                     }}>
-                    {/*  <TouchableOpacity  // Flipping camera between back and front
+                    {/* { <TouchableOpacity  // Flipping camera between back and front
                         style={{
                             flex: 1,
                             alignSelf: 'flex-end'
@@ -89,8 +89,8 @@ export default function RegisterCamera() {
                             flipTheCamera();
                         }}>
                         <Text style={{ fontSize: 18, marginBottom: 18, color: 'white' }}> Flip </Text>
-                    </TouchableOpacity> */}
-
+                    </TouchableOpacity>}
+                     */}
                     <TouchableOpacity // Taking a picture/snap
                         style={{
                             flex: 1,
@@ -99,6 +99,7 @@ export default function RegisterCamera() {
                         onPress={() => {
                             snapAndSaveThePicture();
                         }}>
+
                         <Text style={{ fontSize: 18, marginBottom: 100, color: 'white', textAlign: 'center' }}>Capture</Text>
                     </TouchableOpacity>
 
