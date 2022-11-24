@@ -97,7 +97,7 @@ export default function App() {
 
       {marker && region ?   // Only render MapView if there are welldefined marker and region objects to feed as props to MapView
         <MapView style={styles.mapStyle} region={region} >
-          <Marker coordinate={marker} title='Tomasok' description='On the road again ..' pinColor='gold' />
+          <Marker coordinate={marker} title='Your Location' description='Your current location' pinColor='pink' />
         </MapView>
         : <View style={styles.infoBox}>
           <Text style={styles.txtLine}> Waiting for coordinates</Text>
@@ -124,8 +124,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   infoBox: {
-    flex: 2,
-    margin: 24
+    backgroundColor: 'pink',
+    flex: 2
 
   },
   txtLine: {
