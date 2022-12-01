@@ -3,6 +3,8 @@ import React from 'react'
 import GlovePost from "../components/GlovePost"
 import { useContext } from "react";
 import { PostContext } from "../appContext"
+import BottomButtons from '../components/BottomButtons';
+import AddButton from '../components/AddButton';
 
 export default function FindScreen({navigation}) {
   const [getGlovePosts, setGlovePosts] = useContext(PostContext);
@@ -33,61 +35,48 @@ export default function FindScreen({navigation}) {
                 Single gloves in your area
             </Text>
             
-            <View style={{flex: 1, borderRadius: 15, backgroundColor: '#DA90FC', margin: 15, justifyContent: 'center', borderColor: 'black', borderWidth: 1, width: 100, alignSelf: 'center'}}>
+            <AddButton 
+                style={{backgroundColor: "purple"}}
+                title="MAP"
+                navigation={navigation}
+                navigateTo="Home">
+            </AddButton>
+            
+            
+
+            {/* <View style={{flex: 1, borderRadius: 15, backgroundColor: '#DA90FC', margin: 15, justifyContent: 'center', borderColor: 'black', borderWidth: 1, width: 100, alignSelf: 'center'}}>
+                
                 <Button
                     fontFamily="InriaSans"
                     title="MAP"
                     color='black'
                     onPress={() => navigation.navigate('FindMap')}
                 />
-            </View> 
+            </View>  */}
         </View>
           
         <View style={{flex: 7, justifyContent: 'center'}}>
-        <FlatList
-                  contentContainerStyle={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}
+            <FlatList
+                contentContainerStyle={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}
 
-                  data={getGlovePosts}
+                data={getGlovePosts}
 
-                  renderItem={({item}) => make_post(item)}
+                renderItem={({item}) => make_post(item)}
 
-                  keyExtractor={item => item.glove_id}
-              />
-              {/* <GlovePost 
-                glove_image={require('../assets/glove1.jpg')}
-                navigation={navigation}
-              ></GlovePost>
-              <GlovePost 
-                glove_image={require('../assets/glove2.jpg')}
-                navigation={navigation}
-              ></GlovePost>
-              <GlovePost 
-                glove_image={require('../assets/glove3.jpg')}
-                navigation={navigation}
-              ></GlovePost>
-              <GlovePost 
-                glove_image={require('../assets/glove4.jpg')}
-                navigation={navigation}
-              ></GlovePost> */}
+                keyExtractor={item => item.glove_id}
+            />
         </View>
         
-        <View style={{height: 100, flexDirection: 'row'}}>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                <Button 
-                    title="HOME SCREEN"
-                    color={'black'}
-                    onPress={() => navigation.navigate('Home')}
-                />
-            </View>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                <Button
-                    fontFamily="InriaSans"
-                    title="FIND GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Find')}
-                />
-            </View>
-        </View>
+        <BottomButtons 
+          leftTitle='HOME' 
+          title="tis"
+          titleExtra="ost"
+          navigateTo="Find"
+          navigation={navigation} 
+          leftNavigation="Home" 
+          rightTitle='REGISTER GLOVE' 
+          rightNavigation="Register">
+        </BottomButtons> 
       </View>
     );
   }

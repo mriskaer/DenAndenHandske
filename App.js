@@ -3,7 +3,7 @@ import { View, Text, Image, Button, Pressable } from 'react-native';
 import { NavigationContainer, useLinkProps } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState } from 'react'
-
+import { LogBox } from "react-native"
 import {PostContext} from "./appContext"
 
 import StartScreen from './screens/StartScreen';
@@ -14,6 +14,9 @@ import RegisterPage2 from './screens/RegisterPage2';
 import FindMapPage from './screens/FindMapPage';
 
 const Stack = createNativeStackNavigator();
+
+
+LogBox.ignoreAllLogs(true)
 
 function App() {
   var glovePosts=[
@@ -51,7 +54,11 @@ function App() {
     },
     {
       glove_id: "9",
-      glove_image: require('./assets/glove4.jpg'),
+      glove_image: require('./assets/glove1.jpg'),
+    },
+    {
+      glove_id: "10",
+      glove_image: require('./assets/glove2.jpg'),
     },
   ]
 

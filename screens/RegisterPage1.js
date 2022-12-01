@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 import AddCheckBox from "../components/AddCheckBox"
 import BottomButtons from '../components/BottomButtons';
+import AddButton from '../components/AddButton';
 
 
 export default function RegisterScreen({navigation}) {
@@ -42,32 +43,26 @@ export default function RegisterScreen({navigation}) {
             
             
         </View>
-        <View style={{flex:2}}>
-            <View style={{borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1, padding: 10}}>
-                <Button
-                    title="NEXT"
-                    color='black'
-                    onPress={() => navigation.navigate('Register2')}
-                />
-            </View>
+        
+        
+        <View style={{flex: 1}}>
+            <AddButton 
+                title='Next' 
+                navigation={navigation} 
+                navigateTo='Register2'>
+            </AddButton>
         </View>
-        <View style={{height: 100, flexDirection: 'row'}}>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                <Button 
-                    title="HOME SCREEN"
-                    color={'black'}
-                    onPress={() => navigation.navigate('Home')}
-                />
-            </View>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                <Button
-                    fontFamily="InriaSans"
-                    title="FIND GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Find')}
-                />
-            </View>
-        </View>
+
+    
+        <BottomButtons 
+            leftTitle='HOME' 
+            title="lort"
+            navigateTo="Find"
+            navigation={navigation} 
+            leftNavigation="Home" 
+            rightTitle='FIND GLOVE' 
+            rightNavigation="Find">
+        </BottomButtons> 
         
       </View>
     );

@@ -1,5 +1,6 @@
 import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard } from 'react-native'
 import React from 'react'
+import BottomButtons from '../components/BottomButtons';
 
 export default function RegisterPage2 ({navigation}) {
   const [text, onChangeText] = React.useState("");
@@ -53,23 +54,18 @@ export default function RegisterPage2 ({navigation}) {
                 />
             </View>
         </View>
-        <View style={{height: 100, flexDirection: 'row'}}>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                <Button 
-                    title="HOME SCREEN"
-                    color={'black'}
-                    onPress={() => navigation.navigate('Home')}
-                />
-            </View>
-            <View style={{flex: 1, borderRadius: 10, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 2, justifyContent: 'center'}}>
-                <Button
-                    fontFamily="InriaSans"
-                    title="FIND GLOVE"
-                    color='black'
-                    onPress={() => navigation.navigate('Find')}
-                />
-            </View>
-        </View>
+        
+        <BottomButtons 
+            leftTitle='HOME' 
+            navigation={navigation} 
+            leftNavigation="Home" 
+            rightTitle='FIND GLOVE' 
+            rightNavigation="Find"
+            title="bølle"
+            navigateTo="Find"
+            >
+            
+        </BottomButtons> 
         
       </View>
   )
