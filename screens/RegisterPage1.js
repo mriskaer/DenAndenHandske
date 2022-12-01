@@ -2,6 +2,8 @@ import { View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 import AddCheckBox from "../components/AddCheckBox"
+import BottomButtons from '../components/BottomButtons';
+
 
 export default function RegisterScreen({navigation}) {
 
