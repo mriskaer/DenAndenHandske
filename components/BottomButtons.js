@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native'
 import AddButton from '../components/AddButton';
 
 export default function BottomButtons(props, {navigation}) {
-    return (
+    return ( 
             <View style={{height: 100, flexDirection: 'row'}}>
                 {/* <View style={{flex: 1, borderRadius: 25, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 0, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
                     <Button 
