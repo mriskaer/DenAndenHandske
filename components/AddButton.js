@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
-import StyleSheet from '../StyleSheet'
+import { View, Button } from 'react-native'
+import styles from '../StyleSheet'
 
 export default function AddButton(props) {
         return (
-            <View style={props.style == undefined || props.style == null ? StyleSheet.basicButton : props.style}>
+            <View style={props.style == undefined || props.style == null ? styles.basicButton : props.style}>
                 <Button
                     title={props.title}
                     color='black'
@@ -12,6 +12,5 @@ export default function AddButton(props) {
                 />
             </View>
 
-            //{margin: 5, borderRadius: 20, flexDirection: 'column', backgroundColor: 'lightblue', justifyContent: 'center', borderColor: 'black', borderWidth: 1, padding: 10}
     )
 }

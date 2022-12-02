@@ -7,16 +7,17 @@ import NavBar from '../components/NavBar';
 import AddButton from '../components/AddButton';
 
 export default function FindScreen({navigation}) {
-  const [getGlovePosts, setGlovePosts] = useContext(PostContext);
+  const [getGlovePosts] = useContext(PostContext);
 
   function make_post(post_data) {
     return (
         <GlovePost 
+            navigation={navigation}
             glove_id={post_data.glove_id}
             //location={post_data.location}
             glove_image={post_data.glove_image}
             //description={post_data.description}
-            navigation={navigation}
+            
         ></GlovePost>
     )
 }
@@ -36,23 +37,11 @@ export default function FindScreen({navigation}) {
             </Text>
             
             <AddButton 
-                //style={{backgroundColor: "purple"}}
                 title="MAP"
                 navigation={navigation}
                 navigateTo="Home">
             </AddButton>
             
-            
-
-            {/* <View style={{flex: 1, borderRadius: 15, backgroundColor: '#DA90FC', margin: 15, justifyContent: 'center', borderColor: 'black', borderWidth: 1, width: 100, alignSelf: 'center'}}>
-                
-                <Button
-                    fontFamily="InriaSans"
-                    title="MAP"
-                    color='black'
-                    onPress={() => navigation.navigate('FindMap')}
-                />
-            </View>  */}
         </View>
           
         <View style={{flex: 7, justifyContent: 'center'}}>

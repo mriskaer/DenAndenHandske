@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import AddButton from './AddButton';
-import StyleSheet from '../StyleSheet'
+import styles from '../StyleSheet'
 
 export default function NavBar(props, {navigation}) {
     return ( 
@@ -28,13 +28,13 @@ export default function NavBar(props, {navigation}) {
             </AddButton>
         </View> */}
             <AddButton 
-                style={StyleSheet.navbar}
+                style={styles.navbar}
                 title={props.leftTitle} 
                 navigation={props.navigation} 
                 navigateTo={props.leftNavigation}>
             </AddButton>
             <AddButton 
-                style={StyleSheet.navbar}
+                style={styles.navbar}
                 title={props.rightTitle} 
                 navigation={props.navigation} 
                 navigateTo={props.rightNavigation}>

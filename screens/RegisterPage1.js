@@ -4,9 +4,12 @@ import Checkbox from 'expo-checkbox';
 import AddCheckBox from "../components/AddCheckBox"
 import NavBar from '../components/NavBar';
 import AddButton from '../components/AddButton';
+import { useContext } from "react";
+import { PostContext } from "../appContext"
 
 
 export default function RegisterScreen({navigation}) {
+    const [getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom] = useContext(PostContext);
 
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
@@ -26,7 +29,7 @@ export default function RegisterScreen({navigation}) {
                 <TouchableOpacity onPress={()=>navigation.navigate('Camera')}>
                     <Image 
                         style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                        source={require('../assets/cameraicon.png')} 
+                        source={getWaitingroom["id"] == null ? require("../assets/cameraicon.png") : {uri: getWaitingroom["uri"]}} 
                     />
                 </TouchableOpacity>
             </View>
@@ -40,8 +43,6 @@ export default function RegisterScreen({navigation}) {
                 <AddCheckBox hand="left"></AddCheckBox>
                 <AddCheckBox hand="right"></AddCheckBox>
             </View>
-            
-            
         </View>
         
         

@@ -5,6 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import { Camera } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import { useNavigation } from '@react-navigation/native';
+import { useContext } from "react";
+import { PostContext } from "../appContext"
 
 export default function RegisterCamera({ navigation }) {
     const albumName = 'Glove_cache';
@@ -13,6 +15,7 @@ export default function RegisterCamera({ navigation }) {
 
     const [type, setType] = useState(Camera.Constants.Type.back); // Front or Back camera type. Initially set to Back.
     const cameraRef = useRef(null); // Holding on to our cameara instance to give access to methods
+    const [getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom] = useContext(PostContext)
 
     useEffect(() => {
         (async () => {
@@ -48,15 +51,12 @@ export default function RegisterCamera({ navigation }) {
                 console.log('Album not found. Initializing...');
                 await MediaLibrary.createAlbumAsync(albumName, asset);
             }
-            else {
-                console.log('Album found. Saving Asset');
-                await MediaLibrary.addAssetsToAlbumAsync(asset, albumRef);
-            }
-
+            await MediaLibrary.addAssetsToAlbumAsync(asset, albumRef);
+            console.log(asset.uri)
             //await MediaLibrary.saveToLibraryAsync(uri);  Alternative one stop way to save picture to main roll without possibility to specify album
-
-
             console.log('Asset Saved');
+
+            setWaitingroom({id: asset.id, filename: asset.filename, creationTime: asset.creationTime, uri: asset.uri})
 
         }
         catch (error) {

@@ -64,9 +64,10 @@ function App() {
 
   const [getGlovePosts, setGlovePosts] = useState((glovePosts));
 
+  const [getWaitingroom, setWaitingroom] = useState({id: null, filename: null, creationTime: null, uri: "../assets/cameraicon.png"});
 
   return (
-    <PostContext.Provider value={[getGlovePosts, setGlovePosts]}>
+    <PostContext.Provider value={[getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom]}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={StartScreen} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1', borderWidth: 0}}} />
