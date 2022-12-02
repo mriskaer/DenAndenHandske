@@ -1,4 +1,4 @@
-import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard } from 'react-native'
+import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard, TouchableOpacity } from 'react-native'
 import React from 'react'
 import NavBar from '../components/NavBar';
 
@@ -19,10 +19,13 @@ export default function RegisterPage2 ({navigation}) {
             </Text>
             
             <View style={{flex: 6, alignItems: 'center'}}>
-                <Image 
-                    style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                    source={require('../assets/mapsicon.png')} 
-                />
+                <TouchableOpacity onPress={()=>navigation.navigate('FindMap')}>
+                    <Image 
+                        style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
+                        source={require('../assets/mapsicon.png')} 
+                    />
+                </TouchableOpacity>
+            
             </View>
             
         </View>
