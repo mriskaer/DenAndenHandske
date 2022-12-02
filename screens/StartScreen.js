@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from 'expo-font';
 import { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
-import BottomButtons from "../components/BottomButtons"
+import NavBar from "../components/NavBar"
 
 
 export default function HomeScreen({navigation}) {
@@ -38,7 +38,7 @@ export default function HomeScreen({navigation}) {
             {!fontsLoaded ? (
                 <Text> Loading...</Text>
             ) : (
-                <Text style={{ fontSize: 45, textAlign: 'center' , fontFamily: 'AmaticBold', marginTop: 80 }}> 
+                <Text style={{ fontSize: 55, textAlign: 'center' , fontFamily: 'AmaticBold', marginTop: 80 }}> 
                  DEN ANDEN HANDSKE 
                 </Text> 
             )} 
@@ -47,16 +47,14 @@ export default function HomeScreen({navigation}) {
                 <Image source={require('../assets/frontpage.png')} />
             </View>   
  
-            <BottomButtons 
+            <NavBar 
                 navigation={navigation}
                 leftTitle='REGISTER GLOVE' 
-                title="bajer" 
                 leftNavigation="Register" 
-                rightTitle='FIND GLOVE' 
+                rightTitle='FIND GLOVE'
                 rightNavigation="Find" 
-                navigateTo="Find"
                 >
-            </BottomButtons> 
+            </NavBar> 
 
       </View>
     );

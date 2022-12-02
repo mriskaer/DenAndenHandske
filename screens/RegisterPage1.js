@@ -2,7 +2,7 @@ import { View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 import AddCheckBox from "../components/AddCheckBox"
-import BottomButtons from '../components/BottomButtons';
+import NavBar from '../components/NavBar';
 import AddButton from '../components/AddButton';
 
 
@@ -54,15 +54,13 @@ export default function RegisterScreen({navigation}) {
         </View>
 
     
-        <BottomButtons 
-            leftTitle='HOME' 
-            title="lort"
-            navigateTo="Find"
+        <NavBar 
             navigation={navigation} 
+            leftTitle='HOME' 
             leftNavigation="Home" 
             rightTitle='FIND GLOVE' 
             rightNavigation="Find">
-        </BottomButtons> 
+        </NavBar> 
         
       </View>
     );

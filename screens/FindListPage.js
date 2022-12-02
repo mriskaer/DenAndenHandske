@@ -3,7 +3,7 @@ import React from 'react'
 import GlovePost from "../components/GlovePost"
 import { useContext } from "react";
 import { PostContext } from "../appContext"
-import BottomButtons from '../components/BottomButtons';
+import NavBar from '../components/NavBar';
 import AddButton from '../components/AddButton';
 
 export default function FindScreen({navigation}) {
@@ -36,7 +36,7 @@ export default function FindScreen({navigation}) {
             </Text>
             
             <AddButton 
-                style={{backgroundColor: "purple"}}
+                //style={{backgroundColor: "purple"}}
                 title="MAP"
                 navigation={navigation}
                 navigateTo="Home">
@@ -67,16 +67,13 @@ export default function FindScreen({navigation}) {
             />
         </View>
         
-        <BottomButtons 
-          leftTitle='HOME' 
-          title="tis"
-          titleExtra="ost"
-          navigateTo="Find"
+        <NavBar 
           navigation={navigation} 
+          leftTitle='HOME' 
           leftNavigation="Home" 
           rightTitle='REGISTER GLOVE' 
           rightNavigation="Register">
-        </BottomButtons> 
+        </NavBar> 
       </View>
     );
   }

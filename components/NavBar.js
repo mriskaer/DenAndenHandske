@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import AddButton from '../components/AddButton';
+import AddButton from './AddButton';
+import StyleSheet from '../StyleSheet'
 
-export default function BottomButtons(props, {navigation}) {
+export default function NavBar(props, {navigation}) {
     return ( 
             <View style={{height: 100, flexDirection: 'row'}}>
-                {/* <View style={{flex: 1, borderRadius: 25, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 0, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
+                {/* <View style={{}}>
                     <Button 
                         title={props.leftTitle}
                         color={'black'}
@@ -27,14 +28,16 @@ export default function BottomButtons(props, {navigation}) {
             </AddButton>
         </View> */}
             <AddButton 
-                title={props.title} 
+                style={StyleSheet.navbar}
+                title={props.leftTitle} 
                 navigation={props.navigation} 
-                navigateTo={props.navigateTo}>
+                navigateTo={props.leftNavigation}>
             </AddButton>
             <AddButton 
-                title={props.title} 
+                style={StyleSheet.navbar}
+                title={props.rightTitle} 
                 navigation={props.navigation} 
-                navigateTo={props.navigateTo}>
+                navigateTo={props.rightNavigation}>
             </AddButton>
 
                 {/* <View style={{flex: 1, borderRadius: 25, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 0, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
@@ -45,5 +48,6 @@ export default function BottomButtons(props, {navigation}) {
                     />
                 </View> */}
             </View>
+        
     )
 }

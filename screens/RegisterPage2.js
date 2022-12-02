@@ -1,6 +1,6 @@
 import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard } from 'react-native'
 import React from 'react'
-import BottomButtons from '../components/BottomButtons';
+import NavBar from '../components/NavBar';
 
 export default function RegisterPage2 ({navigation}) {
   const [text, onChangeText] = React.useState("");
@@ -55,17 +55,15 @@ export default function RegisterPage2 ({navigation}) {
             </View>
         </View>
         
-        <BottomButtons 
-            leftTitle='HOME' 
-            navigation={navigation} 
+        <NavBar 
+            navigation={navigation}
+            leftTitle='HOME'
             leftNavigation="Home" 
             rightTitle='FIND GLOVE' 
             rightNavigation="Find"
-            title="bølle"
-            navigateTo="Find"
             >
             
-        </BottomButtons> 
+        </NavBar> 
         
       </View>
   )
