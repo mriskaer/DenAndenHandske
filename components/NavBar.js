@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import AddButton from './AddButton';
+import NavigateButton from './NavigateButton';
 import styles from '../StyleSheet'
 
 export default function NavBar(props, {navigation}) {
@@ -27,18 +27,18 @@ export default function NavBar(props, {navigation}) {
                 navigateTo={props.navigateTo}>
             </AddButton>
         </View> */}
-            <AddButton 
+            <NavigateButton 
                 style={styles.navbar}
                 title={props.leftTitle} 
                 navigation={props.navigation} 
                 navigateTo={props.leftNavigation}>
-            </AddButton>
-            <AddButton 
+            </NavigateButton>
+            <NavigateButton 
                 style={styles.navbar}
                 title={props.rightTitle} 
                 navigation={props.navigation} 
                 navigateTo={props.rightNavigation}>
-            </AddButton>
+            </NavigateButton>
 
                 {/* <View style={{flex: 1, borderRadius: 25, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 0, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
                     <Button

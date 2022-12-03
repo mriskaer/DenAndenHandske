@@ -1,9 +1,20 @@
 import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard, TouchableOpacity } from 'react-native'
 import React from 'react'
 import NavBar from '../components/NavBar';
+import { useContext } from "react";
+import { PostContext } from "../appContext"
+import MapView, { Marker } from 'react-native-maps';
+import styles from "../StyleSheet";
+
 
 export default function RegisterPage2 ({navigation}) {
   const [text, onChangeText] = React.useState("");
+  const [getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom] = useContext(PostContext);
+
+  var marker = getWaitingroom["location"]
+  var region = {...marker, latitudeDelta: 0.001,
+    longitudeDelta: 0.001, }
+    
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
         <View style={{flex: 1, marginTop: 10}}>
@@ -17,16 +28,20 @@ export default function RegisterPage2 ({navigation}) {
             <Text style={{flex: 1, fontSize: 15,}}>
                 Where did you find the glove?
             </Text>
-            
-            <View style={{flex: 6, alignItems: 'center'}}>
-                <TouchableOpacity onPress={()=>navigation.navigate('FindMap')}>
-                    <Image 
-                        style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                        source={require('../assets/mapsicon.png')} 
-                    />
-                </TouchableOpacity>
-            
-            </View>
+            {marker  ?   // Only render MapView if there are welldefined marker and region objects to feed as props to MapView
+                <View style={{flex: 6, alignItems: 'center'}}>
+                    <MapView style={styles.miniMapStyle} region= {region} zoomEnabled={false} scrollEnabled={false}>
+                    <Marker coordinate={marker} title='Your Location' description='Your current location' pinColor='pink' />
+                    </MapView>
+                </View>
+                : <View style={{flex: 6, alignItems: 'center'}}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('FindMap')}>
+                        <Image 
+                            style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
+                            source={require('../assets/mapsicon.png')} 
+                        />
+                    </TouchableOpacity>
+            </View>}
             
         </View>
         <View style={{flex:2, alignItems: 'center'}}>
@@ -53,7 +68,12 @@ export default function RegisterPage2 ({navigation}) {
                 <Button
                     title="POST GLOVE"
                     color='black'
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => {
+                        setWaitingroom({...getWaitingroom, description: text})
+                        setGlovePosts([...getGlovePosts, {id: getWaitingroom["id"], source: getWaitingroom["source"]}])
+                        setWaitingroom({id: null, filename: null, creationTime: null, uri: "../assets/cameraicon.png"})
+                        navigation.navigate('Home')
+                    }}
                 />
             </View>
         </View>

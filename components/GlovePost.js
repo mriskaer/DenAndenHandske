@@ -1,21 +1,22 @@
 import React from 'react'
 import { View, Text, Image, Button } from 'react-native'
 import styles from '../StyleSheet'
-import AddButton from './AddButton'
+import NavigateButton from './NavigateButton'
 
 export default function GlovePost(props) {
     return (
         <View>
             <Image 
                 style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                source={(props.glove_image)} 
+                source={props.source} 
             />
-            <AddButton
-                style={styles.glovepostButton}
+            <View style={styles.glovepostButton}>
+            <Button
                 title="SEE GLOVE"
-                navigation={props.navigation}
-                navigateTo="Home">
-            </AddButton>
+                color="black"
+                onPress={()=> props.navigation.navigate("GlovePostPage", {id: props.id})}
+            ></Button>
+            </View>
         </View>
     )
 }

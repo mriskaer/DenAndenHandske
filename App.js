@@ -12,6 +12,7 @@ import FindListPage from './screens/FindListPage';
 import RegisterCamera from './screens/RegisterCamera';
 import RegisterPage2 from './screens/RegisterPage2';
 import FindMapPage from './screens/FindMapPage';
+import FindEndPage from './screens/FindEndPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,50 +22,47 @@ LogBox.ignoreAllLogs(true)
 function App() {
   var glovePosts=[
     {
-      glove_id: "1",
-      glove_image: require('./assets/glove1.jpg'), 
+      id: "1",
+      source: require('./assets/glove1.jpg'), 
+      filename: "egon",
+      creationTime: "23452345",
+      leftChecked: true, 
+      rightChecked: false, 
+      location: {longitude: 124, latitude: 123}
     }, 
     {
-      glove_id: "2",
-      glove_image: require('./assets/glove2.jpg'),
+      id: "2",
+      source: require('./assets/glove2.jpg'),
+      filename: "egon",
+      creationTime: "23452345",
+      leftChecked: true, 
+      rightChecked: false, 
+      location: {longitude: 124, latitude: 123}
     },
     {
-      glove_id: "3",
-      glove_image: require('./assets/glove3.jpg'),
+      id: "3",
+      source: require('./assets/glove3.jpg'),
+      filename: "egon",
+      creationTime: "23452345",
+      leftChecked: true, 
+      rightChecked: false, 
+      location: {longitude: 124, latitude: 123}
     },
     {
-      glove_id: "4",
-      glove_image: require('./assets/glove4.jpg'),
-    },
-    {
-      glove_id: "5",
-      glove_image: require('./assets/glove1.jpg'),  
-    }, 
-    {
-      glove_id: "6",
-      glove_image: require('./assets/glove2.jpg'),
-    },
-    {
-      glove_id: "7",
-      glove_image: require('./assets/glove3.jpg'),
-    },
-    {
-      glove_id: "8",
-      glove_image: require('./assets/glove4.jpg'),
-    },
-    {
-      glove_id: "9",
-      glove_image: require('./assets/glove1.jpg'),
-    },
-    {
-      glove_id: "10",
-      glove_image: require('./assets/glove2.jpg'),
-    },
+      id: "4",
+      source: require('./assets/glove4.jpg'),
+      filename: "egon",
+      creationTime: "23452345",
+      leftChecked: true, 
+      rightChecked: false, 
+      location: {longitude: 124, latitude: 123}
+    
+    }
   ]
 
   const [getGlovePosts, setGlovePosts] = useState((glovePosts));
 
-  const [getWaitingroom, setWaitingroom] = useState({id: null, filename: null, creationTime: null, uri: "../assets/cameraicon.png"});
+  const [getWaitingroom, setWaitingroom] = useState({id: null, filename: null, creationTime: null, source: require("./assets/cameraicon.png"), leftChecked: false, rightChecked: false, location: null, description: null});
 
   return (
     <PostContext.Provider value={[getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom]}>
@@ -76,6 +74,7 @@ function App() {
           <Stack.Screen name="Camera" component={RegisterCamera} />
           <Stack.Screen name="Register2" component={RegisterPage2} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
           <Stack.Screen name="FindMap" component={FindMapPage} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
+          <Stack.Screen name="GlovePostPage" component={FindEndPage} options={{ title: '', headerStyle: {backgroundColor: '#FFBDF1'}}} />
         </Stack.Navigator>
       </NavigationContainer>
     </PostContext.Provider>

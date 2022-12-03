@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
     
@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1, 
         paddingVertical: 5,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        color: "black"
     }, 
 
     navbar:{
@@ -34,9 +35,34 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1, 
         paddingHorizontal: 10
-    }
-
-
+    },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',  // align vertical
+        backgroundColor: '#fff'
+      },
+      infoBox: {
+        backgroundColor: 'pink',
+        flex: 2
+    
+      },
+      txtLine: {
+        fontSize: 14,
+        fontWeight: 'bold'
+    
+      },
+      mapStyle: {
+        flex: 6,
+        width: Dimensions.get('window').width,
+        margin: 24
+      },
+      miniMapStyle: {
+        width: 130,
+        height: 130,
+        borderRadius: 20,
+        margin: 10,        
+      }
 
   });
 

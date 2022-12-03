@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 import AddCheckBox from "../components/AddCheckBox"
 import NavBar from '../components/NavBar';
-import AddButton from '../components/AddButton';
+import NavigateButton from '../components/NavigateButton';
 import { useContext } from "react";
 import { PostContext } from "../appContext"
 
@@ -29,7 +29,7 @@ export default function RegisterScreen({navigation}) {
                 <TouchableOpacity onPress={()=>navigation.navigate('Camera')}>
                     <Image 
                         style={{height: 130, width: 130, borderRadius: 20, margin: 10}}
-                        source={getWaitingroom["id"] == null ? require("../assets/cameraicon.png") : {uri: getWaitingroom["uri"]}} 
+                        source={getWaitingroom["id"] == null ? require("../assets/cameraicon.png") : getWaitingroom["source"]} 
                     />
                 </TouchableOpacity>
             </View>
@@ -47,11 +47,11 @@ export default function RegisterScreen({navigation}) {
         
         
         <View style={{flex: 1}}>
-            <AddButton 
+            <NavigateButton 
                 title='Next' 
                 navigation={navigation} 
                 navigateTo='Register2'>
-            </AddButton>
+            </NavigateButton>
         </View>
 
     

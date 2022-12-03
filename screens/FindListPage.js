@@ -4,7 +4,7 @@ import GlovePost from "../components/GlovePost"
 import { useContext } from "react";
 import { PostContext } from "../appContext"
 import NavBar from '../components/NavBar';
-import AddButton from '../components/AddButton';
+import NavigateButton from '../components/NavigateButton';
 
 export default function FindScreen({navigation}) {
   const [getGlovePosts] = useContext(PostContext);
@@ -13,9 +13,9 @@ export default function FindScreen({navigation}) {
     return (
         <GlovePost 
             navigation={navigation}
-            glove_id={post_data.glove_id}
+            id={post_data.id}
             //location={post_data.location}
-            glove_image={post_data.glove_image}
+            source={post_data.source}
             //description={post_data.description}
             
         ></GlovePost>
@@ -36,11 +36,11 @@ export default function FindScreen({navigation}) {
                 Single gloves in your area
             </Text>
             
-            <AddButton 
+            <NavigateButton 
                 title="MAP"
                 navigation={navigation}
                 navigateTo="Home">
-            </AddButton>
+            </NavigateButton>
             
         </View>
           
@@ -52,7 +52,7 @@ export default function FindScreen({navigation}) {
 
                 renderItem={({item}) => make_post(item)}
 
-                keyExtractor={item => item.glove_id}
+                keyExtractor={item => item.id}
             />
         </View>
         

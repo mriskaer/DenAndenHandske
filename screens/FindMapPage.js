@@ -2,16 +2,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, Button } from 'react-native';
 import * as Location from 'expo-location';
 
 import MapView, { Marker } from 'react-native-maps';
-
+import styles from "../StyleSheet";
 import Constants from 'expo-constants';
+import { useContext } from "react";
+import { PostContext } from "../appContext"
+import NavigateButton from '../components/NavigateButton';
 
 
-export default function App() {
+export default function App({navigation}) {
   const [location, setLocation] = useState(null);
+  const [getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom] = useContext(PostContext);
 
   // se may consider bundling  the 4 above useState hooks together in one 'setLocationInfo' with
   // object :{location,time,marker, region}
@@ -38,7 +42,7 @@ export default function App() {
         console.log('Good to go #1 installing callback');
         locationWatchId.current = await Location.watchPositionAsync(
           {
-            accuray: Location.Accuracy.BestForNavigation, timeInterval: 1000, distanceInterval: 1,
+            accuray: Location.Accuracy.BestForNavigation, timeInterval: 5000, distanceInterval: 100,
             mayShowUserSettingsDialog: true
           },
 
@@ -49,6 +53,7 @@ export default function App() {
             // All we do for now is update state info on location. 
             //In turn triggering the render of our component including the map
             setLocation(currentPosition);
+            
             console.log('new position consumed');
           });
       }
@@ -110,32 +115,20 @@ export default function App() {
           <Text style={styles.txtLine}>{"longitude: " + coords.longitude + " and " + "latitude: " + coords.latitude}</Text>
         </View>
         : null}
+        <View style={styles.basicButton}>
+          <Button 
+            title="Choose this location"
+            color= "black"
+            onPress={()=> {
+              setWaitingroom({...getWaitingroom, location: marker})
+              navigation.navigate("Register2")
+            }} 
+
+          ></Button>
+        </View>
+       
 
       <StatusBar style='auto' />
     </SafeAreaView>
   );
 }
-// ******************************************************
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',  // align vertical
-    backgroundColor: '#fff'
-  },
-  infoBox: {
-    backgroundColor: 'pink',
-    flex: 2
-
-  },
-  txtLine: {
-    fontSize: 14,
-    fontWeight: 'bold'
-
-  },
-  mapStyle: {
-    flex: 6,
-    width: Dimensions.get('window').width,
-    margin: 24
-  }
-});
