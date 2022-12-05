@@ -16,7 +16,7 @@ export default function RegisterPage2 ({navigation}) {
     longitudeDelta: 0.001, }
     
   return (
-    <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
+    <View style={styles.standardPage}>
         <View style={{flex: 1, marginTop: 10}}>
             <Text style={{fontSize: 25, margin: 5, fontFamily: 'InriaSans'}}>
                 DEN ANDEN HANDSKE

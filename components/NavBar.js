@@ -5,7 +5,7 @@ import styles from '../StyleSheet'
 
 export default function NavBar(props, {navigation}) {
     return ( 
-            <View style={{height: 100, flexDirection: 'row'}}>
+            <View style={{height: 120, flexDirection: 'row'}}>
                 {/* <View style={{}}>
                     <Button 
                         title={props.leftTitle}

@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 import NavBar from "../components/NavBar"
+import styles from "../StyleSheet";
 
 
 export default function HomeScreen({navigation}) {
@@ -33,12 +34,12 @@ export default function HomeScreen({navigation}) {
     }
 
     return (
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFBDF1' }}>
+        <View style={styles.frontPage}>
             
             {!fontsLoaded ? (
                 <Text> Loading...</Text>
             ) : (
-                <Text style={{ fontSize: 55, textAlign: 'center' , fontFamily: 'AmaticBold', marginTop: 80 }}> 
+                <Text style={styles.titleFrontPage}> 
                  DEN ANDEN HANDSKE 
                 </Text> 
             )} 

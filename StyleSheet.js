@@ -20,10 +20,12 @@ const styles = StyleSheet.create({
         borderRadius: 25, 
         flexDirection: 'column', 
         backgroundColor: '#E6ADFF', 
-        margin: 0, 
+        margin: 10, 
         justifyContent: 'center', 
         borderWidth: 1, 
-        borderColor: 'black'
+        borderColor: 'black',
+        marginBottom: 50
+        
     },
 
     glovepostButton:{
@@ -52,17 +54,53 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     
       },
+
       mapStyle: {
         flex: 6,
         width: Dimensions.get('window').width,
         margin: 24
       },
+
       miniMapStyle: {
         width: 130,
         height: 130,
         borderRadius: 20,
         margin: 10,        
+      }, 
+
+      titleFrontPage: {
+        fontSize: 55, 
+        textAlign: 'center' , 
+        fontFamily: 'AmaticBold', 
+        marginTop: 80 
+      }, 
+
+      frontPage: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        backgroundColor: '#FFBDF1' 
+      },
+
+      titleAllPages: {
+        fontSize: 25, 
+        margin: 5, 
+        fontFamily: 'InriaSans',
+        flex: 1, 
+        marginTop: 10
+      }, 
+      
+      standardPage: { 
+        flex: 1, 
+        alignItems: 'center', 
+        backgroundColor: '#FFBDF1'
+      }, 
+
+      textOnScreen: {
+        flex: 2, 
+        fontSize: 15,
       }
+
 
   });
 

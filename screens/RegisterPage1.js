@@ -6,22 +6,22 @@ import NavBar from '../components/NavBar';
 import NavigateButton from '../components/NavigateButton';
 import { useContext } from "react";
 import { PostContext } from "../appContext"
+import styles from '../StyleSheet';
 
 
 export default function RegisterScreen({navigation}) {
     const [getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom] = useContext(PostContext);
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1'}}>
-        <View style={{flex: 1, marginTop: 10}}>
-            <Text style={{fontSize: 25, margin: 5, fontFamily: 'InriaSans'}}>
+      <View style={styles.standardPage}>
+            <Text style={styles.titleAllPages}>
                 DEN ANDEN HANDSKE
             </Text>
-        </View>
+
         
         <View style={{flex:3}}>
             
-            <Text style={{flex: 2, fontSize: 15,}}>
+            <Text style={styles.textOnScreen}>
                 Take a picture of the glove
             </Text>
             
