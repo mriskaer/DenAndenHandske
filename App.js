@@ -16,7 +16,6 @@ import FindEndPage from './screens/FindEndPage';
 
 const Stack = createNativeStackNavigator();
 
-
 LogBox.ignoreAllLogs(true)
 
 function App() {
@@ -28,7 +27,7 @@ function App() {
             creationTime: "23452345",
             leftChecked: true,
             rightChecked: false,
-            location: { longitude: 124, latitude: 123 },
+            location: { longitude: 12.528457923503545, latitude: 55.678110122660165 },
             description: "Flot"
         },
         {
@@ -38,7 +37,7 @@ function App() {
             creationTime: "23452345",
             leftChecked: true,
             rightChecked: false,
-            location: { longitude: 124, latitude: 123 },
+            location: { longitude: 12.528457923503545, latitude: 55.678110122660165 },
             description: "Sød"
         },
         {
@@ -48,7 +47,7 @@ function App() {
             creationTime: "23452345",
             leftChecked: true,
             rightChecked: false,
-            location: { longitude: 124, latitude: 123 },
+            location: { longitude: 12.528457923503545, latitude: 55.678110122660165 },
             description: "Skøn"
         },
         {
@@ -58,7 +57,7 @@ function App() {
             creationTime: "23452345",
             leftChecked: true,
             rightChecked: false,
-            location: { longitude: 124, latitude: 123 },
+            location: { longitude: 12.528457923503545, latitude: 55.678110122660165 },
             description: "Dejlig"
         }
     ]

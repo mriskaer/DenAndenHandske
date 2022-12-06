@@ -6,7 +6,8 @@ import { Camera } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import { useNavigation } from '@react-navigation/native';
 import { useContext } from "react";
-import { PostContext } from "../appContext"
+import { PostContext } from "../appContext";
+import styles from '../StyleSheet';
 
 export default function RegisterCamera({ navigation }) {
     const albumName = 'Glove_cache';
@@ -72,7 +73,8 @@ export default function RegisterCamera({ navigation }) {
     console.log("Permissions granted!" + " CameraPermission: " + hasCameraPermission + " CameraRollPermission: " + hasCameraRollPermission);
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+
+        <SafeAreaView style={{ flex: 1 }} >
             <Camera style={{ flex: 1 }} type={type} ref={cameraRef}>
                 <View
                     style={{
@@ -102,12 +104,12 @@ export default function RegisterCamera({ navigation }) {
                             snapAndSaveThePicture(); navigation.navigate('Register');
                         }}>
 
-                        <Text style={{ fontSize: 18, marginBottom: 100, color: 'white', textAlign: 'center' }}>Capture</Text>
+                        <Text style={{ fontSize: 18, marginBottom: 70, color: 'white', textAlign: 'center', padding: 20, alignSelf: 'center', borderWidth: 1, borderRadius: 30, borderColor: 'white' }}>Capture</Text>
                     </TouchableOpacity>
 
                 </View>
             </Camera>
             <StatusBar style='auto' />
-        </SafeAreaView>
+        </ SafeAreaView>
     );
 }

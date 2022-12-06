@@ -54,7 +54,6 @@ export default function RegisterScreen({ navigation }) {
                 </NavigateButton>
             </View>
 
-
             <NavBar
                 navigation={navigation}
                 leftTitle='HOME'

@@ -21,7 +21,7 @@ export default function FindEndPage({ navigation, route }) {
     return (
         <View style={styles.standardPage}>
 
-            <SafeAreaView>
+            <SafeAreaView style={{ maxHeight: 650 /* TODO: HJÆLP HER PLZ */ }}>
                 <View style={{ height: 50 }}>
                     <Text style={styles.titleAllPages}>
                         DEN ANDEN HANDSKE
@@ -43,11 +43,8 @@ export default function FindEndPage({ navigation, route }) {
                     </MapView>
 
                     <Text style={styles.textOnScreen}>
-                        {current_post['location']['latitude']}, {current_post['location']['longitude']}
+                        {current_post['location']['longitude']}, {current_post['location']['latitude']}
                     </Text>
-
-
-
 
                     <View style={{ flex: 1 }}>
                         <NavigateButton
@@ -56,23 +53,16 @@ export default function FindEndPage({ navigation, route }) {
                             navigateTo='Home'>
                         </NavigateButton>
                     </View>
-
                 </ScrollView>
-                <NavBar
-                    navigation={navigation}
-                    leftTitle='HOME'
-                    leftNavigation="Home"
-                    rightTitle='FIND GLOVE'
-                    rightNavigation="Find">
-                </NavBar>
             </SafeAreaView>
 
-
-
-            {/* <Text>{current_post["id"]}</Text>
-            <Image 
-                style={styles.miniMapStyle} source={current_post["source"]}>
-            </Image>  */}
+            <NavBar
+                navigation={navigation}
+                leftTitle='HOME'
+                leftNavigation="Home"
+                rightTitle='FIND GLOVE'
+                rightNavigation="Find">
+            </NavBar>
         </View>
     )
 }
