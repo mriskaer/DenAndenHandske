@@ -3,10 +3,10 @@ import { View, Text, Button } from 'react-native'
 import NavigateButton from './NavigateButton';
 import styles from '../StyleSheet'
 
-export default function NavBar(props, {navigation}) {
-    return ( 
-            <View style={{height: 120, flexDirection: 'row'}}>
-                {/* <View style={{}}>
+export default function NavBar(props, { navigation }) {
+    return (
+        <View style={{ height: 70, flexDirection: 'row' }}>
+            {/* <View style={{}}>
                     <Button 
                         title={props.leftTitle}
                         color={'black'}
@@ -14,40 +14,40 @@ export default function NavBar(props, {navigation}) {
                     />
                 </View> */}
 
-               {/*  <AddButton 
+            {/*  <AddButton 
                     title={props.title} 
                     navigateTo = {"Find"}
                     //onPress={() => props.navigation.navigate(props.navigateTo)}
                     >
                     </AddButton> */}
-                    {/* <View style={{flex: 1}}>
+            {/* <View style={{flex: 1}}>
             <AddButton 
                 title={props.title} 
                 navigation={props.navigation} 
                 navigateTo={props.navigateTo}>
             </AddButton>
         </View> */}
-            <NavigateButton 
+            <NavigateButton
                 style={styles.navbar}
-                title={props.leftTitle} 
-                navigation={props.navigation} 
+                title={props.leftTitle}
+                navigation={props.navigation}
                 navigateTo={props.leftNavigation}>
             </NavigateButton>
-            <NavigateButton 
+            <NavigateButton
                 style={styles.navbar}
-                title={props.rightTitle} 
-                navigation={props.navigation} 
+                title={props.rightTitle}
+                navigation={props.navigation}
                 navigateTo={props.rightNavigation}>
             </NavigateButton>
 
-                {/* <View style={{flex: 1, borderRadius: 25, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 0, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
+            {/* <View style={{flex: 1, borderRadius: 25, flexDirection: 'column', backgroundColor: '#DA90FC', margin: 0, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
                     <Button
                         title={props.rightTitle}
                         color='black'
                         onPress={() => props.navigation.navigate(props.rightNavigation)}
                     />
                 </View> */}
-            </View>
-        
+        </View>
+
     )
 }

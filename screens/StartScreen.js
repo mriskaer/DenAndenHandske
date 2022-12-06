@@ -1,4 +1,4 @@
-import { View, Button, Image, Text} from "react-native";
+import { View, Button, Image, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from 'expo-font';
@@ -8,7 +8,7 @@ import NavBar from "../components/NavBar"
 import styles from "../StyleSheet";
 
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
 
     // CUSTOM FONT
     const [fontsLoaded] = useFonts({
@@ -24,7 +24,7 @@ export default function HomeScreen({navigation}) {
             InriaSans: require('../assets/fonts/InriaSans-Light.ttf'),
          });
     } */
-    
+
     /* useEffect(async() => {
         loadAsync2()
     }, []); */
@@ -35,28 +35,28 @@ export default function HomeScreen({navigation}) {
 
     return (
         <View style={styles.frontPage}>
-            
+
             {!fontsLoaded ? (
                 <Text> Loading...</Text>
             ) : (
-                <Text style={styles.titleFrontPage}> 
-                 DEN ANDEN HANDSKE 
-                </Text> 
-            )} 
+                    <Text style={styles.titleFrontPage}>
+                        DEN ANDEN HANDSKE
+                    </Text>
+                )}
 
-            <View style={{flex: 2}}>
+            <View style={{ flex: 2 }}>
                 <Image source={require('../assets/frontpage.png')} />
-            </View>   
- 
-            <NavBar 
-                navigation={navigation}
-                leftTitle='REGISTER GLOVE' 
-                leftNavigation="Register" 
-                rightTitle='FIND GLOVE'
-                rightNavigation="Find" 
-                >
-            </NavBar> 
+            </View>
 
-      </View>
+            <NavBar
+                navigation={navigation}
+                leftTitle='REGISTER GLOVE'
+                leftNavigation="Register"
+                rightTitle='FIND GLOVE'
+                rightNavigation="Find"
+            >
+            </NavBar>
+
+        </View>
     );
-  }
+}

@@ -56,7 +56,7 @@ export default function RegisterCamera({ navigation }) {
             //await MediaLibrary.saveToLibraryAsync(uri);  Alternative one stop way to save picture to main roll without possibility to specify album
             console.log('Asset Saved');
 
-            setWaitingroom({...getWaitingroom, id: asset.id, filename: asset.filename, creationTime: asset.creationTime, source: {uri: asset.uri}})
+            setWaitingroom({ ...getWaitingroom, id: asset.id, filename: asset.filename, creationTime: asset.creationTime, source: { uri: asset.uri } })
 
         }
         catch (error) {

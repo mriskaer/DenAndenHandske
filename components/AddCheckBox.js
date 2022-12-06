@@ -11,9 +11,9 @@ export default function AddCheckBox(props) {
 
     function handleChange(checked) {
         if (props.hand == "left") {
-            setWaitingroom({...getWaitingroom, leftChecked: checked})
+            setWaitingroom({ ...getWaitingroom, leftChecked: checked })
         } else {
-            setWaitingroom({...getWaitingroom, rightChecked: checked})
+            setWaitingroom({ ...getWaitingroom, rightChecked: checked })
         }
         setChecked(checked)
     }
@@ -21,12 +21,12 @@ export default function AddCheckBox(props) {
     console.log(getWaitingroom["leftChecked"], getWaitingroom["rightChecked"])
 
     return (
-        <View style={{margin: 20}}>
+        <View style={{ margin: 20 }}>
             <Text>
                 {props.hand}
             </Text>
             <Checkbox
-                style={{alignSelf: 'center'}}
+                style={{ alignSelf: 'center' }}
                 value={isChecked}
                 onValueChange={handleChange}
                 color={isChecked ? '#4630EB' : undefined}
