@@ -31,9 +31,13 @@ export default function FindEndPage({ navigation, route }) {
                     <Image
                         style={styles.bigImageStyle} source={current_post["source"]}>
                     </Image>
-                    <Text style={styles.descriptionOnPost}>
-                        {current_post["description"]}
-                    </Text>
+
+                    {current_post['description'] != null ?
+                        <Text style={styles.descriptionOnPost}>
+                            {current_post["description"]}
+                        </Text> : <Text> </Text>
+                    }
+
                     <MapView style={styles.miniMapStyle} region={region} zoomEnabled={false} scrollEnabled={false}>
                         <Marker coordinate={current_post["location"]} title='Your Location' description='Your current location' pinColor='pink' />
                     </MapView>

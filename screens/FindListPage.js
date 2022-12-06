@@ -1,10 +1,11 @@
-import { View, Text, Image, Button, FlatList } from 'react-native'
+import { View, Text, Image, Button, FlatList, SafeAreaView } from 'react-native'
 import React from 'react'
 import GlovePost from "../components/GlovePost"
 import { useContext } from "react";
 import { PostContext } from "../appContext"
 import NavBar from '../components/NavBar';
 import NavigateButton from '../components/NavigateButton';
+import styles from '../StyleSheet';
 
 export default function FindScreen({ navigation }) {
     const [getGlovePosts] = useContext(PostContext);
@@ -14,55 +15,39 @@ export default function FindScreen({ navigation }) {
             <GlovePost
                 navigation={navigation}
                 id={post_data.id}
-                //location={post_data.location}
                 source={post_data.source}
-            //description={post_data.description}
-
             ></GlovePost>
         )
     }
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFBDF1' }}>
-            <View style={{ flex: 1, marginTop: 10 }}>
-                <Text style={{ fontSize: 25, margin: 5, fontFamily: 'InriaSans' }}>
+        <View style={{ alignItems: 'center', backgroundColor: '#FFBDF1' }}>
+            <View style={{ height: 50 }}>
+                <Text style={styles.titleAllPages}>
                     DEN ANDEN HANDSKE
-            </Text>
+                    </Text>
             </View>
 
-            {/* <View style={{flex:2, alignItems: 'center'}}>
-            
-            <Text style={{flex: 1, fontSize: 15,}}>
-                Single gloves in your area
-            </Text>
-            
-            <NavigateButton 
-                title="MAP"
-                navigation={navigation}
-                navigateTo="Home">
-            </NavigateButton>
-            
-        </View> */}
+            <View style={{ justifyContent: 'center' }}>
+                <SafeAreaView style={{ maxHeight: 600 /* HJÆLP HER PLZ */ }}>
+                    <FlatList
+                        contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}
 
-            <View style={{ flex: 7, justifyContent: 'center' }}>
-                <FlatList
-                    contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}
+                        data={getGlovePosts}
 
-                    data={getGlovePosts}
+                        renderItem={({ item }) => make_post(item)}
 
-                    renderItem={({ item }) => make_post(item)}
-
-                    keyExtractor={item => item.id}
-                />
+                        keyExtractor={item => item.id}
+                    />
+                </SafeAreaView>
+                <NavBar
+                    navigation={navigation}
+                    leftTitle='HOME'
+                    leftNavigation="Home"
+                    rightTitle='REGISTER GLOVE'
+                    rightNavigation="Register">
+                </NavBar>
             </View>
-
-            <NavBar
-                navigation={navigation}
-                leftTitle='HOME'
-                leftNavigation="Home"
-                rightTitle='REGISTER GLOVE'
-                rightNavigation="Register">
-            </NavBar>
         </View>
     );
 }

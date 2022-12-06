@@ -13,15 +13,17 @@ export default function RegisterScreen({ navigation }) {
 
     return (
         <View style={styles.standardPage}>
-            <Text style={styles.titleAllPages}>
-                DEN ANDEN HANDSKE
-            </Text>
+            <View style={{ height: 80 }}>
+                <Text style={styles.titleAllPages}>
+                    DEN ANDEN HANDSKE
+                </Text>
+            </View>
 
-            <View style={{ flex: 3 }}>
+            <View style={{ flex: 2 }}>
 
                 <Text style={styles.textOnScreen}>
                     Take a picture of the glove
-            </Text>
+                </Text>
 
                 <View style={{ flex: 6, alignItems: 'center' }}>
                     <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
@@ -33,11 +35,11 @@ export default function RegisterScreen({ navigation }) {
                 </View>
 
             </View>
-            <View style={{ flex: 2 }}>
+            <View style={{ flex: 1 }}>
                 <Text style={{ fontSize: 15 }}>
                     Which glove(s) have you found?
             </Text>
-                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{ flex: 2, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <AddCheckBox hand="left"></AddCheckBox>
                     <AddCheckBox hand="right"></AddCheckBox>
                 </View>
@@ -48,8 +50,6 @@ export default function RegisterScreen({ navigation }) {
                     title='Next'
                     navigation={navigation}
                     navigateTo={getWaitingroom["source"] != require("../assets/cameraicon.png") ? 'Register2' : 'Register'}
-
-                /* navigateTo='Register2' */
                 >
                 </NavigateButton>
             </View>

@@ -24,6 +24,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: 'black',
+        /* position: 'absolute',
+        minHeight: 50 */
     },
 
     glovepostButton: {
@@ -44,15 +46,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',  // align vertical
         backgroundColor: '#fff'
     },
+
     infoBox: {
         backgroundColor: 'pink',
         flex: 2
-
     },
+
     txtLine: {
         fontSize: 14,
         fontWeight: 'bold'
-
     },
 
     mapStyle: {
@@ -119,12 +121,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         backgroundColor: 'lightyellow',
         padding: 5,
-        borderRadius: 5,
+        //borderRadius: 5,
         borderWidth: 1,
-        margin: 10
+        margin: 10,
+        borderColor: 'gray'
     },
-
-
 });
 
 export default styles;
