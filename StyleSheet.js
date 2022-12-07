@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
 
     navbar: {
         flex: 1,
-        borderRadius: 25,
+        borderRadius: 10,
         flexDirection: 'column',
         backgroundColor: '#E6ADFF',
-        margin: 10,
+        margin: 5,
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: 'black',
