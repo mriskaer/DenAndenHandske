@@ -32,7 +32,7 @@ export default function FindScreen({navigation}) {
         
         <View style={{flex:2, alignItems: 'center'}}>
             
-            <Text style={{flex: 1, fontSize: 15,}}>
+            <Text style={{flex: 1, fontSize: 20, fontFamily: 'InriaSans'}}>
                 Single gloves in your area
             </Text>
             

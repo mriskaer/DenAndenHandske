@@ -1,4 +1,4 @@
-import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard, TouchableOpacity } from 'react-native'
+import { View, Text, Image, Button, SafeAreaView, TextInput, Keyboard, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import NavBar from '../components/NavBar';
 import { useContext } from "react";
@@ -72,6 +72,10 @@ export default function RegisterPage2 ({navigation}) {
                         setWaitingroom({...getWaitingroom, description: text})
                         setGlovePosts([...getGlovePosts, {id: getWaitingroom["id"], source: getWaitingroom["source"]}])
                         setWaitingroom({id: null, filename: null, creationTime: null, uri: "../assets/cameraicon.png"})
+                        Alert.alert(
+                            "Glove registered!",
+                            "Thank you for helping gloves reunite!",
+                          );
                         navigation.navigate('Home')
                     }}
                 />

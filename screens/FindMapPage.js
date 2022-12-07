@@ -1,8 +1,8 @@
 // Author: Tomasok, Oct.2021
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text, View, StyleSheet, Dimensions, Button } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, Button, Alert } from 'react-native';
 import * as Location from 'expo-location';
 
 import MapView, { Marker } from 'react-native-maps';
@@ -122,7 +122,7 @@ export default function App({navigation}) {
             onPress={()=> {
               setWaitingroom({...getWaitingroom, location: marker})
               navigation.navigate("Register2")
-            }} 
+              }}
 
           ></Button>
         </View>
