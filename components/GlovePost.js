@@ -1,13 +1,12 @@
 import React from 'react'
-import { View, Text, Image, Button } from 'react-native'
+import { View, Image, Button } from 'react-native'
 import styles from '../StyleSheet'
-import NavigateButton from './NavigateButton'
 
 export default function GlovePost(props) {
     return (
         <View>
             <Image
-                style={{ height: 130, width: 130, borderRadius: 20, margin: 10 }}
+                style={styles.miniMapStyle}
                 source={props.source}
             />
             <View style={styles.glovepostButton}>

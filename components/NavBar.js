@@ -3,9 +3,9 @@ import { View, Text, Button } from 'react-native'
 import NavigateButton from './NavigateButton';
 import styles from '../StyleSheet'
 
-export default function NavBar(props, { navigation }) {
+export default function NavBar(props) {
     return (
-        <View style={{ height: 70, flexDirection: 'row' }}>
+        <View style={styles.navbutton}>
             <NavigateButton
                 style={styles.navbar}
                 title={props.leftTitle}

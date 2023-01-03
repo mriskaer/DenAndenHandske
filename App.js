@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { View, Text, Image, Button, Pressable } from 'react-native';
-import { NavigationContainer, useLinkProps } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState } from 'react'
 import { LogBox } from "react-native"

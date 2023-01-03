@@ -24,9 +24,7 @@ const styles = StyleSheet.create({
         margin: 5,
         justifyContent: 'center',
         borderWidth: 1,
-        borderColor: 'black',
-        /* position: 'absolute',
-        minHeight: 50 */
+        borderColor: 'black'
     },
 
     glovepostButton: {
@@ -68,7 +66,7 @@ const styles = StyleSheet.create({
         width: 130,
         height: 130,
         borderRadius: 20,
-        margin: 1,
+        margin: 10,
         alignSelf: 'center'
     },
 
@@ -122,10 +120,40 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         backgroundColor: 'lightyellow',
         padding: 5,
-        //borderRadius: 5,
         borderWidth: 1,
         margin: 10,
         borderColor: 'gray'
+    },
+
+    postGloveButton: {
+        borderRadius: 20,
+        flexDirection: 'column',
+        backgroundColor: 'lightblue',
+        justifyContent: 'center',
+        borderColor: 'black',
+        borderWidth: 1,
+        padding: 10
+    },
+
+    textinputfield: {
+        alignSelf: 'center',
+        backgroundColor: 'white',
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: 'gray',
+        padding: 10,
+        width: 300,
+        height: 100
+    },
+
+    mapview: {
+        flex: 6,
+        alignItems: 'center'
+    },
+
+    navbutton: {
+        height: 70,
+        flexDirection: 'row'
     },
 });
 

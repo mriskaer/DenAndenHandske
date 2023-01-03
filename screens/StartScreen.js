@@ -1,9 +1,5 @@
-import { View, Button, Image, Text } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Image, Text } from "react-native";
 import { useFonts } from 'expo-font';
-import { useState, useEffect } from 'react';
-import * as Font from 'expo-font';
 import NavBar from "../components/NavBar"
 import styles from "../StyleSheet";
 
@@ -16,18 +12,6 @@ export default function HomeScreen({ navigation }) {
         'JosefinSans': require("../assets/fonts/JosefinSans.ttf"),
         'AmaticBold': require("./../assets/fonts/AmaticSC-Bold.ttf")
     })
-
-    //const [fontLoaded, setFontLoaded] = useState(false);
-
-    /* async function loadAsync2() {
-        await Font.loadAsync({
-            InriaSans: require('../assets/fonts/InriaSans-Light.ttf'),
-         });
-    } */
-
-    /* useEffect(async() => {
-        loadAsync2()
-    }, []); */
 
     if (!fontsLoaded) {
         return null;
@@ -56,7 +40,6 @@ export default function HomeScreen({ navigation }) {
                 rightNavigation="Find"
             >
             </NavBar>
-
         </View>
     );
 }

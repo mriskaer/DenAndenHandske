@@ -21,7 +21,7 @@ export default function FindEndPage({ navigation, route }) {
     return (
         <View style={styles.standardPage}>
 
-            <SafeAreaView style={{ maxHeight: 650 /* TODO: HJÆLP HER PLZ */ }}>
+            <SafeAreaView style={{ maxHeight: 650 }}>
                 <View style={{ height: 50 }}>
                     <Text style={styles.titleAllPages}>
                         DEN ANDEN HANDSKE
