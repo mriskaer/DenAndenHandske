@@ -63,7 +63,16 @@ function App() {
 
     const [getGlovePosts, setGlovePosts] = useState((glovePosts));
 
-    const [getWaitingroom, setWaitingroom] = useState({ id: null, filename: null, creationTime: null, source: require("./assets/cameraicon.png"), leftChecked: false, rightChecked: false, location: null, description: null });
+    const [getWaitingroom, setWaitingroom] = useState({
+        id: null,
+        filename: null,
+        creationTime: null,
+        source: require("./assets/cameraicon.png"),
+        leftChecked: false,
+        rightChecked: false,
+        location: null,
+        description: null
+    });
 
     return (
         <PostContext.Provider value={[getGlovePosts, setGlovePosts, getWaitingroom, setWaitingroom]}>

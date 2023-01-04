@@ -77,7 +77,6 @@ export default function RegisterPage2({ navigation }) {
                         color='black'
                         onPress={() => {
                             if (getWaitingroom["location"] != null) {
-
                                 setGlovePosts([...getGlovePosts, getWaitingroom])
                                 setWaitingroom({ id: null, filename: null, creationTime: null, source: require("../assets/cameraicon.png") })
                                 navigation.navigate('Home')

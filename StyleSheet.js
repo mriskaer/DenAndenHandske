@@ -155,6 +155,14 @@ const styles = StyleSheet.create({
         height: 70,
         flexDirection: 'row'
     },
+
+    checkboxes: {
+        flex: 2,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 20
+    },
 });
 
 export default styles;

@@ -24,10 +24,10 @@ export default function RegisterScreen({ navigation }) {
                     Take a picture of the glove
                 </Text>
 
-                <View style={{ flex: 6, alignItems: 'center' }}>
+                <View style={styles.mapview}>
                     <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
                         <Image
-                            style={{ height: 130, width: 130, borderRadius: 20, margin: 10 }}
+                            style={styles.miniMapStyle}
                             source={getWaitingroom["id"] == null ? require("../assets/cameraicon.png") : getWaitingroom["source"]}
                         />
                     </TouchableOpacity>
@@ -35,10 +35,10 @@ export default function RegisterScreen({ navigation }) {
 
             </View>
             <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 15 }}>
+                <Text style={styles.textOnScreen}>
                     Which glove(s) have you found?
             </Text>
-                <View style={{ flex: 2, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <View style={styles.checkboxes}>
                     <AddCheckBox hand="left"></AddCheckBox>
                     <AddCheckBox hand="right"></AddCheckBox>
                 </View>

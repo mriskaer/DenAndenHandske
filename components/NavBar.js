@@ -19,6 +19,5 @@ export default function NavBar(props) {
                 navigateTo={props.rightNavigation}>
             </NavigateButton>
         </View>
-
     )
 }
